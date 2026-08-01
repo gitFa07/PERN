@@ -1,17 +1,24 @@
-import React from "react";
-import Car from "./components/car";
+import React, { useState } from "react";
+import Search from "./components/Search.jsx";
 
 const App = () => {
-  return (
-    <div>
-      <h1>Welcome to the cars store!</h1>
+  const [searchTerm, setSearchTerm] = useState("");
 
-      <ul>
-        <Car />
-        <Car />
-        <Car />
-      </ul>
-    </div>
+  return (
+    <>
+      <div className="pattern">H</div>
+      <div className="weapper">
+        <header>
+          <img src="./hero.png" alt="hero banner" />
+          <h1>
+            Find <span className="text-gradient">Movies</span> you'll enjoy
+            without any issue
+          </h1>
+        </header>
+
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      </div>
+    </>
   );
 };
 
